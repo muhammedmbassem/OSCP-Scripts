@@ -1,0 +1,18 @@
+1- Collect all scripts to run from a single file 
+
+2- NetworkScan : result files from all hosts scan collected and imported in Metasploit DB 
+
+3- WebScan : result files from all hostes are correlated and managed in on file with statistics 
+
+4- Metasploit : 
+
+	A. Check availability 
+	B. Create Workspace 
+	C. db_import all files 
+
+5- init check vuln existance against discovered list 
+
+--
+Muhammed M.Bassem 
+Senior CyberSecurity Consultant 
+
