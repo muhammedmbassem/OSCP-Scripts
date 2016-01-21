@@ -17,7 +17,7 @@ echo "****************************" >> $xconnection
 if [ $(ping -c5 $i|grep "64 bytes from" |wc -l) -ge 1 ];then
 	# If server is pingable Start Scan
 	#Create Directory for each IP Address
-	baseFile="/root/Desktop/EBC/Web_2/Web_port_"$port"-Nikto-Scan/"
+	baseFile="/root/Desktop/target/Web_2/Web_port_"$port"-Nikto-Scan/"
 	mkdir -p $baseFile
 	ipBase="$(echo $i|tr '.' '_')"
 	filePath=$baseFile$ipBase"_logs"

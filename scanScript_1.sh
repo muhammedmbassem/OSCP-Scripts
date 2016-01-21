@@ -13,7 +13,7 @@ echo "****************************" >> XConnection.txt
 if [ $(ping -c5 $i|grep "64 bytes from" |wc -l) -ge 1 ];then
 	# If server is pingable Start Scan
 	#Create Directory for each IP Address
-	baseFile="/root/Desktop/EBC/nmap_"$2"-Rank/"
+	baseFile="/root/Desktop/target/nmap_"$2"-Rank/"
 	mkdir -p $baseFile
 	ipBase="$(echo $i|tr '.' '_')"
 	filePath=$baseFile$ipBase"_logs"
@@ -23,7 +23,7 @@ if [ $(ping -c5 $i|grep "64 bytes from" |wc -l) -ge 1 ];then
 	#Enter working Directory 
         cd $filePath	
 	echo "**************************************************">>$ipBase"_log.txt"
-	echo "*[+] Scan S-Rank EBC $(date) *" >> $ipBase"_log.txt"
+	echo "*[+] Scan S-Rank  $(date) *" >> $ipBase"_log.txt"
 	echo "**************************************************">>$ipBase"_log.txt"
 	cat $ipBase"_log.txt"
 	echo "--------------------------------"
