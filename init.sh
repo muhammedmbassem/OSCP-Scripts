@@ -3,6 +3,7 @@ clear
 #--------------#
 # Tag - Header #
 #--------------#
+baseWorkingDirectory="/root/Desktop/"
 # Take two parameter operationName and How many Stages 
 function progressbar(){
 if [ ${#} == 2 ];then
@@ -38,6 +39,33 @@ fi
 
 
 }
+
+#require clientName, workspaceType
+function workSpaceCreator(){
+#Metasploit WorkSpace
+
+if [ $2 == "D" ];then
+progressbar "Creating $1 directory workspace" 40;
+#Directory Structure 
+# Define Web,network,
+web=($baseWorkingDirectory""$1"/web")
+network=($baseWorkingDirectory""$1"/network")
+mkdir -p $network
+mkdir -p $web 
+fi 
+
+
+}
+
+#Let's Define ClientName,listofIP Addresses 'Scope', 
+function init(){
+	banner;
+	echo -en "Client Name:"
+	read clientName
+	workSpaceCreator $clientName "D"	
+
+}
+
 function banner(){
 			echo -e "Welcome $(whoami)!";
 		}
@@ -45,4 +73,6 @@ function banner(){
 
 #banner
 
-progressbar "Copying" 10 ;
+#progressbar "Copying" 10 ;
+
+init
